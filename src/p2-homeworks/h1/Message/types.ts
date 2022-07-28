@@ -16,5 +16,4 @@ export type TSMessageProps = {
 
 export type TSMessageContainerProps = {
     isMineMessage?: boolean,
-
 }

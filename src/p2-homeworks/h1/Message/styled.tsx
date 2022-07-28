@@ -9,11 +9,7 @@ export const SChat = styled.div(props => ({
     gap: 20,
     columnGap: 20,
     rowGap: 20,
-    position: "fixed",
-    left: "20%",
-    right: "20%",
-    top: "10%",
-    bottom: "10%",
+    width: 500,
     overflow: "auto",
     borderRadius: 30,
 }))

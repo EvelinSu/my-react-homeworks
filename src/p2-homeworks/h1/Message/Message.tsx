@@ -7,7 +7,7 @@ import {
     SMessageText,
     SMessageTime,
     SMessageTitle
-} from "./styles";
+} from "./styled";
 import {TMessageProps} from "./types";
 import {MessageTailIcon} from "../../../Icons/MessageTailIcon";
 
@@ -27,4 +27,4 @@ const Message: FC<TMessageProps> = ({message, time, avatar, name, ...props}) => 
     )
 }
 
-export default Message
+export default Message;
