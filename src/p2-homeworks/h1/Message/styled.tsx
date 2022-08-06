@@ -1,6 +1,15 @@
 import styled from "styled-components";
 import {TSMessageContainerProps, TSMessageProps, TSMessageTextProps} from "./types";
 
+export const STitle = styled.div(props => ({
+    marginTop: 10,
+    padding: 20,
+    borderTop: "1px solid #000",
+    fontSize: 22,
+    fontWeight: "bold",
+
+}))
+
 export const SChat = styled.div(props => ({
     display: "flex",
     flexDirection: "column",
@@ -9,9 +18,10 @@ export const SChat = styled.div(props => ({
     gap: 20,
     columnGap: 20,
     rowGap: 20,
-    width: 500,
+    width: 550,
     overflow: "auto",
     borderRadius: 30,
+    boxSizing: "border-box",
 }))
 
 export const SMessage = styled.div<TSMessageProps>(props => ({

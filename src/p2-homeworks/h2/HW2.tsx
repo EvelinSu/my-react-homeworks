@@ -1,18 +1,9 @@
 import React, {useState} from 'react'
-import Affairs from './Affairs'
-import AlternativeAffair from "./AlternativeAffair";
-
-// types
-export type AffairPriorityType = 'high' | 'low' | 'middle'
-export type AffairType = {
-    _id: number,
-    name: string,
-    priority: AffairPriorityType,
-}
-export type FilterType = 'all' | AffairPriorityType
+import Affairs from './Affairs/Affairs'
+import {AffairType, FilterType} from "./Affairs/types";
 
 // constants
-const defaultAffairs: Array<AffairType> = [ // need to fix any
+const defaultAffairs: Array<AffairType> = [
     {_id: 1, name: 'React', priority: 'high'},
     {_id: 2, name: 'anime', priority: 'low'},
     {_id: 3, name: 'games', priority: 'low'},
@@ -22,16 +13,7 @@ const defaultAffairs: Array<AffairType> = [ // need to fix any
 
 // pure helper functions
 export const filterAffairs = (affairs: Array<AffairType>, filter: FilterType): Array<AffairType> => {
-    switch (filter) {
-        case 'all':
-            return affairs
-        case 'high':
-            return affairs.filter(el => el.priority === 'high')
-        case 'middle':
-            return affairs.filter(el => el.priority === 'middle')
-        case 'low':
-            return affairs.filter(el => el.priority === 'low')
-    }
+    return (filter !== 'all') ? affairs.filter(el => el.priority === filter) : affairs
 }
 export const deleteAffair = (affairs: Array<AffairType>, _id: number): Array<AffairType> => {
     return affairs.filter(el => el._id !== _id)
@@ -40,7 +22,6 @@ export const deleteAffair = (affairs: Array<AffairType>, _id: number): Array<Aff
 function HW2() {
     const [affairs, setAffairs] = useState<Array<AffairType>>(defaultAffairs)
     const [filter, setFilter] = useState<FilterType>('all')
-
     const filteredAffairs = filterAffairs(affairs, filter)
     const deleteAffairCallback = (_id: number) => setAffairs(deleteAffair(affairs, _id))
 
@@ -51,6 +32,7 @@ function HW2() {
             homeworks 2
             <Affairs
                 data={filteredAffairs}
+                activeFilter={filter}
                 setFilter={setFilter}
                 filteredAffairs={filteredAffairs}
                 deleteAffairCallback={deleteAffairCallback}
