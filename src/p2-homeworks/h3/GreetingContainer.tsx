@@ -18,10 +18,10 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
     const addUser = () => {
         if((/^[a-яA-Я\-]+$/).test(name)){
             addUserCallback(name)
-            alert("Hello " + name + "!")
+            alert("Hello " + name + "! Please go away!")
             setName('')
         } else {
-            setError('invalid name')
+            setError('Very unusual and interesting name, but I can\'t approve it')
 
         }
     }
