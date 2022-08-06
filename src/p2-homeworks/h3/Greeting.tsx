@@ -2,25 +2,37 @@ import React from 'react'
 import s from './Greeting.module.css'
 
 type GreetingPropsType = {
-    name: any // need to fix any
-    setNameCallback: any // need to fix any
-    addUser: any // need to fix any
-    error: any // need to fix any
-    totalUsers: any // need to fix any
+    name: string
+    setNameCallback: (e: React.ChangeEvent<HTMLInputElement>) => void
+    addUser: () => void
+    error: string
+    totalUsers: number
 }
 
-// презентационная компонента (для верстальщика)
 const Greeting: React.FC<GreetingPropsType> = (
-    {name, setNameCallback, addUser, error, totalUsers} // деструктуризация пропсов
+    {name, setNameCallback, addUser, error, totalUsers}
 ) => {
-    const inputClass = s.error // need to fix with (?:)
+    const onKeyDownAddUser = (e: React.KeyboardEvent<HTMLInputElement>) => e.key === 'Enter' && addUser()
+    const inputClass = error && s.error
+    const buttonClass = error && s.buttonLock
 
     return (
-        <div>
-            <input value={name} onChange={setNameCallback} className={inputClass}/>
-            <span>{error}</span>
-            <button onClick={addUser}>add</button>
-            <span>{totalUsers}</span>
+        <div className={s.wrapper}>
+            <div className={s.container}>
+                <div className={s.inputContainer}>
+                    <input
+                        value={name}
+                        onChange={setNameCallback}
+                        onKeyDown={onKeyDownAddUser}
+                        className={inputClass}
+                        placeholder={"Your name..."}
+                    />
+                    <span className={s.errorText}>{error}</span>
+                </div>
+                <button className={buttonClass} onClick={addUser}>add</button>
+                <span>{totalUsers}</span>
+            </div>
+
         </div>
     )
 }

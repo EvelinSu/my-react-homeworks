@@ -2,6 +2,77 @@
 
 }
 
+
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    column-gap: 10px;
+    padding: 30px 20px;
+    border-radius: 20px;
+    background-color: #2b3f64;
+    width: 300px;
+    color: #fff;
+    position: relative;
+}
+.container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    column-gap: 10px;
+    width: 100%;
+}
+
+input {
+    padding: 8px 10px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-family: inherit;
+    background-color: rgba(255, 255, 255, 0.1);
+}
 .error {
-    border: 1px solid red;
+    outline: 1px solid #cb5757;
+}
+
+.errorText{
+    position: absolute;
+    color: #cb5757;
+    font-size: 12px;
+    top: 12px;
+}
+
+input:hover{
+    opacity: 0.8;
+}
+input:focus{
+    opacity: 1;
+}
+input::placeholder{
+    opacity: 0.4;
+    color: inherit;
+}
+
+.inputContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+button{
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+button:hover{
+    transform: scale(0.9);
+}
+
+.buttonLock{
+    pointer-events: none;
+    opacity: 0.5;
 }

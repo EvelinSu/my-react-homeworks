@@ -53,12 +53,12 @@ const buttons: Array<TButtons> = [
         filter: "high"
     },
     {
-        label: "Low",
-        filter: "low"
-    },
-    {
         label: "Middle",
         filter: "middle"
+    },
+    {
+        label: "Low",
+        filter: "low"
     },
 ]
 
