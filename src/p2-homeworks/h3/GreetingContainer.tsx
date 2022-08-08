@@ -16,7 +16,9 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
         setError('')
     }
     const addUser = () => {
-        if((/^[a-яA-Я\-]+$/).test(name)){
+        if(name.length < 1) {
+            setError('PLEASE enter your name!!!')
+        } else if((/^[a-яA-Я\-]+$/).test(name)){
             addUserCallback(name)
             alert("Hello " + name + "! Please go away!")
             setName('')
