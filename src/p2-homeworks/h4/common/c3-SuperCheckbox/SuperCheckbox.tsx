@@ -1,5 +1,4 @@
 import React, {ChangeEvent, DetailedHTMLProps, InputHTMLAttributes} from 'react'
-import s from './SuperCheckbox.module.css'
 import {SSuperInputText} from "../c1-SuperInputText/styled";
 
 // тип пропсов обычного инпута
@@ -22,16 +21,18 @@ const SuperCheckbox: React.FC<SuperCheckboxPropsType> = (
 ) => {
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
         onChangeChecked && onChangeChecked(e.currentTarget.checked)
+        onChange && onChange(e)
     }
 
     return (
         <label>
             <SSuperInputText
+                isCheckbox={true}
                 type={'checkbox'}
                 onChange={onChangeCallback}
                 checked={props.checked}
             />
-            {children && <span className={s.spanClassName}>{children}</span>}
+            {children && <span>{children}</span>}
         </label>
     )
 }

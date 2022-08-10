@@ -1,22 +1,20 @@
-import React, {ButtonHTMLAttributes, DetailedHTMLProps} from 'react'
-import s from './SuperButton.module.css'
+import styled from "styled-components";
+import {theme} from "../../constants";
+import {TSSuperButtonProps} from "./types";
 
-// тип пропсов обычной кнопки, children в котором храниться название кнопки там уже описан
-type DefaultButtonPropsType = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
-
-type SuperButtonPropsType = DefaultButtonPropsType & {
-    red?: boolean
-}
-
-const SuperButton: React.FC<SuperButtonPropsType> = ({red, className,...restProps}) => {
-    const finalClassName = `${red ? s.red : s.default} ${className}`
-
-    return (
-        <button
-            className={finalClassName}
-            {...restProps} // отдаём кнопке остальные пропсы если они есть (children там внутри)
-        />
-    )
-}
+const SuperButton = styled.button<TSSuperButtonProps>(({design,...props}) => ({
+    backgroundColor: theme.colors.default,
+    color: "#fff",
+    ...design === 'danger' && {
+        backgroundColor: theme.colors.danger
+    },
+    "&:hover": {
+      transform: "scale(0.9)"
+    },
+    "&:disabled": {
+        opacity: 0.3,
+        pointerEvents: "none",
+    }
+}))
 
 export default SuperButton

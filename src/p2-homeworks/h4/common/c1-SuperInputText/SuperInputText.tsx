@@ -29,10 +29,10 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
                 type={'text'}
                 onChange={onChangeCallback}
                 onKeyPress={onKeyPressCallback}
-                isError={!!error}
+                error={error}
+                placeholder={props.placeholder}
 
             />
-            {error && <span >{error}</span>}
         </>
     )
 }
