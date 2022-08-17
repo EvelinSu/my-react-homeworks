@@ -13,7 +13,7 @@ export const STitle = styled.div(props => ({
 export const SChat = styled.div(props => ({
     display: "flex",
     flexDirection: "column",
-    backgroundColor: "#0f1630",
+    backgroundColor: "#223452",
     padding: 30,
     gap: 20,
     columnGap: 20,

@@ -31,7 +31,7 @@ export const SAffairs = styled.div<TSAffairsProps>(({ priority }) => ({
     rowGap: 15,
     backgroundColor: Priorities[priority].color,
     width: 350,
-    minHeight: 250,
+    minHeight: 278,
     padding: 30,
     borderRadius: 30,
     color: "#fff",

@@ -9,7 +9,6 @@ const defaultAffairs: Array<AffairType> = [
     {_id: 3, name: 'games', priority: 'high'},
     {_id: 4, name: 'sleep', priority: 'high'},
     {_id: 5, name: 'work', priority: 'low'},
-    {_id: 6, name: 'trolling', priority: 'high'},
     {_id: 7, name: 'html & css', priority: 'low'},
 ]
 
@@ -29,9 +28,9 @@ function HW2() {
 
     return (
         <div>
-            <hr />
-            <hr />
-            homeworks 2
+            <h1>
+                homeworks 2
+            </h1>
             <Affairs
                 data={filteredAffairs}
                 activeFilter={filter}
@@ -39,8 +38,7 @@ function HW2() {
                 filteredAffairs={filteredAffairs}
                 deleteAffairCallback={deleteAffairCallback}
             />
-            <hr />
-            <hr />
+
         </div>
     )
 }

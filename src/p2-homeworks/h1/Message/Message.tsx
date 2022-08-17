@@ -9,7 +9,6 @@ import {
     SMessageTitle
 } from "./styled";
 import {TMessageProps} from "./types";
-import {MessageTailIcon} from "../../../Icons/MessageTailIcon";
 
 const Message: FC<TMessageProps> = ({message, time, avatar, name, ...props}) => {
     return (
@@ -22,7 +21,6 @@ const Message: FC<TMessageProps> = ({message, time, avatar, name, ...props}) => 
                     <SMessageTime>{time}</SMessageTime>
                 </SMessageContent>
             </SMessageContainer>
-            <MessageTailIcon/>
         </SMessage>
     )
 }

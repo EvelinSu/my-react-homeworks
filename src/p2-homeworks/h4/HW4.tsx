@@ -22,9 +22,10 @@ function HW4() {
     const testOnChange = (e: ChangeEvent<HTMLInputElement>) => setChecked(e.currentTarget.checked)
 
     return (
-        <>
-            <hr />
-            homeworks 4
+        <div>
+            <h1>
+                homeworks 4
+            </h1>
             <div className={s.column}>
                 <SSuperInputTextWrapper>
                     <SuperInputText
@@ -62,9 +63,7 @@ function HW4() {
                 {/*// onChange тоже должен работать*/}
                 <SuperCheckbox checked={checked} onChange={testOnChange} />
             </div>
-            <hr />
-            <hr />
-        </>
+        </div>
 
     )
 }

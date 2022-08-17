@@ -30,8 +30,9 @@ const messages = [
 function HW1() {
     return (
         <div>
-            <hr />
-            homeworks 1
+            <h1>
+                homeworks 1
+            </h1>
             <SChat>
                 {messages.map(({id, avatar, name, message, time, isMineMessage}) => (
                     <Message

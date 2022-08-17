@@ -1,4 +1,5 @@
 {
+  "homepage": "https://EvelinSu.github.io/my-react-homeworks",
   "name": "simple-react-homeworks",
   "version": "0.1.0",
   "private": true,
@@ -18,10 +19,9 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "3.4.1",
     "styled-components": "^5.3.5",
-    "typescript": "~3.7.2",
+    "typescript": "^4.7.4",
     "uuid": "^8.3.2"
   },
-  "homepage": "https://github.io/EvelinSu/my-react-homeworks",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
