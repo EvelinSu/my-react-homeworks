@@ -8,7 +8,6 @@ export type SuperInputTextPropsType = DefaultInputPropsType & {
     error?: string
     isError?: boolean,
     spanClassName?: string
-    isCheckbox?: boolean
 }
 
 export type TSSuperInputTextWrapperProps = {

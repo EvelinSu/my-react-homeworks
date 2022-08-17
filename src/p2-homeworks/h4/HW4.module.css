@@ -21,3 +21,12 @@
 .testSpanError {
     color: blue;
 }
+
+label{
+    display: flex;
+    align-items: center;
+}
+
+span{
+    line-height: 10px;
+}

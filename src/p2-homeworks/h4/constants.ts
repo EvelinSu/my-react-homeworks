@@ -13,7 +13,7 @@ export const theme = {
 
         input: {
             border: 'rgba(0, 0, 0, 0.1)',
-            default: '#2234521C',
+            default: 'rgba(81,88,124,0.24)',
             hover: 'rgba(34,52,82,0.21)',
             focus: 'red',
         },

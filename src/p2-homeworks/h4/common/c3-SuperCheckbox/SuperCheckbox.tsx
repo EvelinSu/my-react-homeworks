@@ -1,5 +1,5 @@
 import React, {ChangeEvent, DetailedHTMLProps, InputHTMLAttributes} from 'react'
-import {SSuperInputText} from "../c1-SuperInputText/styled";
+import {SSuperCheckbox, SSuperInputText} from "../c1-SuperInputText/styled";
 
 // тип пропсов обычного инпута
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
@@ -26,8 +26,7 @@ const SuperCheckbox: React.FC<SuperCheckboxPropsType> = (
 
     return (
         <label>
-            <SSuperInputText
-                isCheckbox={true}
+            <SSuperCheckbox
                 type={'checkbox'}
                 onChange={onChangeCallback}
                 checked={props.checked}
