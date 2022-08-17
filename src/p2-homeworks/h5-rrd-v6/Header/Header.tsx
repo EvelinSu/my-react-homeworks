@@ -1,16 +1,12 @@
 import React, {useState} from 'react'
 import {SHeader, SHeaderNav, SHeaderNavList, SHeaderNavTrigger} from "./styled";
 import {TNavLinks, TNavLinksLabel} from "./types";
-import {useNavigate} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 
 function Header() {
     const [isOpened, setIsOpened] = useState<boolean>(true)
-    const [activePage, setActivePage] = useState<TNavLinksLabel>('pre junior')
+    const location = useLocation()
     const navigate = useNavigate()
-    const onClickHandler = (label:TNavLinksLabel, link: string) => {
-        setActivePage(label)
-        navigate(link)
-    }
 
     return (
         <SHeader
@@ -22,7 +18,8 @@ function Header() {
             </SHeaderNavTrigger>
             <SHeaderNavList isOpened={isOpened}>
                 {navLinks.map(({label, link, id}) => (
-                    <SHeaderNav key={id} onClick={() => onClickHandler(label, link)} isActive={activePage === label}>
+                    <SHeaderNav key={id} onClick={() => navigate(link)} isActive={location.pathname === link}
+                    >
                         {label}
                     </SHeaderNav>
                 ))}
@@ -32,7 +29,6 @@ function Header() {
 }
 
 export default Header
-
 
 const navLinks: Array<TNavLinks> = [
     {

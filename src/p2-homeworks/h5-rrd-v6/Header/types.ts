@@ -1,4 +1,4 @@
-export type TNavLinksLabel =     "pre junior" | "junior" | "junior+"
+export type TNavLinksLabel =     "pre junior" | "junior" | "junior+" | ""
 
 export type TNavLinks = {
     id: number

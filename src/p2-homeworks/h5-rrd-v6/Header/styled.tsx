@@ -12,7 +12,6 @@ export const SHeader = styled.div((props) => ({
     marginTop: 75,
 }))
 
-const itemWidth = 80
 
 export const SHeaderNavList = styled.div<TSHeaderNavListProps>(({isOpened, ...props}) => ({
     display: "flex",
@@ -22,7 +21,7 @@ export const SHeaderNavList = styled.div<TSHeaderNavListProps>(({isOpened, ...pr
     opacity: 0,
     transition: "0.3s",
     ...isOpened && {
-        width: itemWidth * 3,
+        width: 280,
         opacity: 1,
     }
 }))
