@@ -26,7 +26,7 @@ function HW4() {
             <h1>
                 homeworks 4
             </h1>
-            <div className={s.column}>
+            <div className={s.wrapper}>
                 <SSuperInputTextWrapper>
                     <SuperInputText
                         placeholder={"Введите текст..."}

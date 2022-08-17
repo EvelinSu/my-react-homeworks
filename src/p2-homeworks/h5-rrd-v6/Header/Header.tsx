@@ -1,9 +1,16 @@
 import React, {useState} from 'react'
 import {SHeader, SHeaderNav, SHeaderNavList, SHeaderNavTrigger} from "./styled";
-import {TNavLinks} from "./types";
+import {TNavLinks, TNavLinksLabel} from "./types";
+import {useNavigate} from "react-router-dom";
 
 function Header() {
-    const [isOpened, setIsOpened] = useState(false)
+    const [isOpened, setIsOpened] = useState<boolean>(true)
+    const [activePage, setActivePage] = useState<TNavLinksLabel>('pre junior')
+    const navigate = useNavigate()
+    const onClickHandler = (label:TNavLinksLabel, link: string) => {
+        setActivePage(label)
+        navigate(link)
+    }
 
     return (
         <SHeader
@@ -15,33 +22,32 @@ function Header() {
             </SHeaderNavTrigger>
             <SHeaderNavList isOpened={isOpened}>
                 {navLinks.map(({label, link, id}) => (
-                    <SHeaderNav key={id}>
+                    <SHeaderNav key={id} onClick={() => onClickHandler(label, link)} isActive={activePage === label}>
                         {label}
                     </SHeaderNav>
                 ))}
             </SHeaderNavList>
-
-
         </SHeader>
     )
 }
 
 export default Header
 
+
 const navLinks: Array<TNavLinks> = [
     {
         id: 1,
-        label: "Link 1",
-        link: "#"
+        label: "pre junior",
+        link: "/pre-junior"
     },
     {
         id: 2,
-        label: "Link 2",
-        link: "#"
+        label: "junior",
+        link: "/junior"
     },
     {
         id: 3,
-        label: "Link 3",
-        link: "#"
+        label: "junior+",
+        link: "/junior+"
     },
 ]

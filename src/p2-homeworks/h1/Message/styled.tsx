@@ -50,7 +50,7 @@ export const SMessageContainer = styled.div<TSMessageContainerProps>((props) => 
     flexDirection: "column",
     position: "relative",
     padding: " 5px 10px",
-    backgroundColor: "#33435d",
+    backgroundColor: "#405273",
     borderRadius: "10px 10px 10px 10px",
     maxWidth: "50%",
     "&:after": {
@@ -58,7 +58,7 @@ export const SMessageContainer = styled.div<TSMessageContainerProps>((props) => 
         position: "absolute",
         width: 30,
         height: 25,
-        borderRight: "10px solid #33435d",
+        borderRight: "10px solid #405273",
         borderBottomRightRadius: "35%",
         left: -35,
         bottom: 10,
