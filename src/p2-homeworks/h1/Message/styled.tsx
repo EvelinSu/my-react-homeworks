@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {TSMessageContainerProps, TSMessageProps, TSMessageTextProps} from "./types";
+import {theme} from "../../h4/constants";
 
 export const STitle = styled.div(props => ({
     marginTop: 10,
@@ -13,7 +14,7 @@ export const STitle = styled.div(props => ({
 export const SChat = styled.div(props => ({
     display: "flex",
     flexDirection: "column",
-    backgroundColor: "#223452",
+    backgroundColor: theme.colors.secondary,
     padding: 30,
     gap: 20,
     columnGap: 20,

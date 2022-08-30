@@ -13,6 +13,7 @@ export const SSuperInputTextWrapper = styled.div<TSSuperInputTextWrapperProps>((
 export const SSuperInputText = styled.input<SuperInputTextPropsType>(({error, ...props}) => ({
     padding: "8px 10px",
     borderRadius: 10,
+    width: "100%",
     border: "none",
     color: "inherit",
     outline: `1px solid ${theme.colors.primary}`,

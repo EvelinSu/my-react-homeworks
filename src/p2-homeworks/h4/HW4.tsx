@@ -40,7 +40,9 @@ function HW4() {
                         {error}
                     </SSuperInputTextError>
                 </SSuperInputTextWrapper>
-                <SuperInputText/>
+                <SSuperInputTextWrapper>
+                    <SuperInputText/>
+                </SSuperInputTextWrapper>
                 <div className={s.row}>
                     <SuperButton>
                         default

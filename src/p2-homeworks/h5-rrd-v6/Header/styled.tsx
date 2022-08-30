@@ -2,6 +2,7 @@ import styled from "styled-components";
 import {TSHeaderNavListProps, TSHeaderNavProps, TSHeaderNavTriggerProps} from "./types";
 import {NavLink} from "react-router-dom";
 import {inherits} from "util";
+import {theme} from "../../h4/constants";
 
 export const SHeader = styled.div((props) => ({
     display: "flex",
@@ -53,7 +54,7 @@ export const SHeaderNavTrigger = styled.div<TSHeaderNavTriggerProps>(({isOpened}
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#223452",
+    backgroundColor: theme.colors.secondary,
     borderRadius: "50%",
     width: 60,
     height: 60,
@@ -62,7 +63,7 @@ export const SHeaderNavTrigger = styled.div<TSHeaderNavTriggerProps>(({isOpened}
     userSelect: "none",
     ...isOpened && {
         opacity: 0.5,
-        color: "#223452",
+        color: theme.colors.secondary,
         marginRight: 20,
     }
 }))

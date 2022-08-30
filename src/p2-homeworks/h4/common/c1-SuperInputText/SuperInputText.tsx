@@ -27,7 +27,9 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
         <>
             <SSuperInputText
                 type={'text'}
+                onBlur={props.onBlur && props.onBlur}
                 onChange={onChangeCallback}
+                value={props.value}
                 onKeyPress={onKeyPressCallback}
                 error={error}
                 placeholder={props.placeholder}
