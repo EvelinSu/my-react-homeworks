@@ -1,12 +1,11 @@
 import React from 'react'
+import HW7 from "../../h7/HW7";
 
 function Junior() {
     return (
-        <>
-            <h1>
-                empty junior page <br/><br/> (-ω-、)
-            </h1>
-        </>
+        <div>
+            <HW7 />
+        </div>
     )
 }
 
