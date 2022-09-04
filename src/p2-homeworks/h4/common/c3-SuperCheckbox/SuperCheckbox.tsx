@@ -28,6 +28,7 @@ const SuperCheckbox: React.FC<SuperCheckboxPropsType> = (
         <label>
             <SSuperCheckbox
                 type={'checkbox'}
+                name={props.name}
                 onChange={onChangeCallback}
                 checked={props.checked}
             />
