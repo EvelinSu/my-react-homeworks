@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {theme} from "../../../h4/constants";
 
 export const SSelect = styled.select(props => ({
     padding: "7px 15px",
@@ -14,11 +15,85 @@ export const SSelect = styled.select(props => ({
         opacity: 0.7,
 
     },
-    option:{
+    option: {
         color: "#000",
     }
 }))
 
-export const SOption = styled.option(props => ({
+export const SOption = styled.option(props => ({}))
+
+export const SSuperSelectWrapper = styled.div(props => ({
+    position: "relative",
+    display: "flex",
+    fontSize: 14,
+    outline: "none",
+    border: "none",
+
+}))
+
+export const SSuperSelectInputWrapper = styled.div(props => ({
+    display: "flex",
+    position: "relative",
+    borderRadius: 20,
+    backgroundColor: "rgba(255,255,255,0.1)",
+    padding: "6px 12px",
+    cursor: "pointer",
+    transition: "0.2s",
+    "&:hover": {
+        opacity: 0.7
+    }
+
+}))
+
+export const SSuperSelectInput = styled.div(props => ({
+    display: "flex",
+    alignItems: "center",
+    padding: "0 10px",
+    userSelect: "none",
+
+}))
+
+type TInputProps = {
+    isOpen?: boolean
+    isHovered?: boolean
+}
+export const SSuperSelectInputIcon = styled.div<TInputProps>(props => ({
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    cursor: "pointer",
+    transition: "0.2s",
+    transform: `rotate(${props.isOpen ? '180deg' : '0'})`,
+    svg: {
+        width: 18,
+        height: 18,
+    }
+}))
+
+export const SSuperOptionsList = styled.div(props => ({
+    justifySelf: "center",
+    position: "absolute",
+    top: 40,
+    maxWidth: "100%",
+    width: "100%",
+    borderRadius: 10,
+    backgroundColor: theme.colors.primary,
+    maxHeight: 160,
+    overflow: "auto",
+}))
+
+export const SSuperOption = styled.div<TInputProps>(props => ({
+    padding: "5px 20px",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap",
+    borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
+    cursor: "pointer",
+    "&::last-of-type": {
+      borderBottom: "none",
+    },
+    ...props.isHovered && {
+        backgroundColor: "rgba(255, 255, 255, 0.1)",
+    }
 
 }))
