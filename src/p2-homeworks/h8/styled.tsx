@@ -6,10 +6,10 @@ export const SGridTable = styled.div((props) => ({
     flexDirection: "column",
     alignItems: "center",
     gap: 5,
-    padding: 10,
+    padding: "15px 10px 10px 10px",
     backgroundColor: "rgba(0, 0, 0, 0.15)",
     borderRadius: 20,
-    minHeight: 329,
+    minHeight: 335,
     width: 290,
 }))
 
@@ -17,7 +17,7 @@ export const SGridTablePanel = styled.div((props) => ({
     display: "flex",
     alignItems: "center",
     gap: 4,
-    marginBottom: 15,
+    marginBottom: 10,
     flexDirection: "row",
     borderRadius: 15,
     padding: 5,

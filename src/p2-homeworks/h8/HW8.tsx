@@ -85,7 +85,7 @@ function HW8() {
                     show older than
                     <SGridTablePanelInput type={"number"} value={replaceNulls(age)} onChange={onChangeInput} />
                 </SGridTablePanel>
-                <SGridTableRow>
+                <SGridTableRow margin={"0 0 10px 0"}>
                     <SGridTitleCell onClick={onNameSortClickHandler}>
                         Name
                         <SGridTitleCellSort sort={nameSort}>
