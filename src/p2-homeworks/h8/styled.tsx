@@ -5,32 +5,49 @@ export const SGridTable = styled.div((props) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    gap: 10,
-    padding: 30,
-    backgroundColor: theme.colors.secondary,
-    borderRadius: 30,
-    minHeight: 310,
-    width: 280,
+    gap: 5,
+    padding: 10,
+    backgroundColor: "rgba(0, 0, 0, 0.15)",
+    borderRadius: 20,
+    minHeight: 329,
+    width: 290,
 }))
 
 export const SGridTablePanel = styled.div((props) => ({
     display: "flex",
     alignItems: "center",
-    gap: 5,
+    gap: 4,
+    marginBottom: 15,
     flexDirection: "row",
+    borderRadius: 15,
+    padding: 5,
 }))
 
+
 export const SGridTablePanelInput = styled.input((props) => ({
-    width: 60,
+    width: 45,
+    padding: 0,
+    marginLeft: 10,
+    color: "#798fad",
+    fontWeight: "bolder",
+    fontSize: 18,
+    backgroundColor: "transparent",
+
 }))
 
 export const SGridTitleCell = styled.div((props) => ({
     display: "flex",
     alignItems: "center",
-    gap: 10,
+    gap: 3,
+    padding: "0 15px",
+    fontWeight: 600,
+    opacity: 0.8,
     cursor: "pointer",
-    opacity: 0.4,
+    color: "#798fad",
     userSelect: "none",
+    "&:hover": {
+        opacity: 0.6,
+    }
 }))
 
 type TSGridTitleCellSort = {
@@ -40,7 +57,6 @@ export const SGridTitleCellSort = styled.span<TSGridTitleCellSort>(props => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-
     ...props.sort === 'up' && {
         transform: 'scale(1)',
     },
@@ -53,13 +69,20 @@ export const SGridTitleCellSort = styled.span<TSGridTitleCellSort>(props => ({
     }
 }))
 
-export const SGridTableRow = styled.div((props) => ({
+type TSGridTableRow = {
+    margin?: string,
+}
+export const SGridTableRow = styled.div<TSGridTableRow>((props) => ({
     display: "grid",
     overflow: "hidden",
     maxWidth: "100%",
     width: "100%",
-    gridTemplateColumns: "minmax(140px, 1fr) minmax(50px, 1fr)",
-    gap: 20,
+    margin: props.margin,
+    gridTemplateColumns: "minmax(150px, 3fr) minmax(50px, 1fr)",
+    gap: 5,
+    "&:first-of-type": {
+        marginBottom: 10,
+    }
 }))
 
 export const SGridTableCell = styled.div((props) => ({
@@ -67,9 +90,12 @@ export const SGridTableCell = styled.div((props) => ({
     maxWidth: "100%",
     textOverflow: "ellipsis",
     whiteSpace: "nowrap",
+    backgroundColor: "rgba(255, 255, 255, 0.05)",
+    borderRadius: 10,
+    padding: "6px 15px",
     "&:last-of-type": {
-        color: "#617593",
-        fontWeight: 600,
+        opacity: 0.5,
+        textAlign: "center",
     }
 }))
 
