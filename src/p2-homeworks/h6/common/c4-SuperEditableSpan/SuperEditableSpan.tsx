@@ -66,7 +66,7 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = (
                         onDoubleClick={onDoubleClickCallBack}
                     >
                         {/*если нет захардкодженного текста для спана, то значение инпута*/}
-                        {children || restProps.value}
+                        {children ? <span style={{opacity: 0.3}}>{children}</span> : restProps.value}
                     </SSuperEditableSpan>
                 )
             }

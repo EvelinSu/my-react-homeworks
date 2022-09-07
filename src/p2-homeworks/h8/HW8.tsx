@@ -1,8 +1,22 @@
-import React, {useState} from 'react'
-import {homeWorkReducer} from './bll/homeWorkReducer'
-import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
+import React, {ChangeEvent, useState} from 'react'
+import {ageSortAC, homeWorkReducer, nameSortAC} from './bll/homeWorkReducer'
+import s from "../h4/HW4.module.css"
+import {
+    SGridTable,
+    SGridTableCell,
+    SGridTablePanel, SGridTablePanelInput,
+    SGridTableRow,
+    SGridTitleCell,
+    SGridTitleCellSort, SListNotFound
+} from "./styled";
+import SortIcon from "../../icons/SortIcon";
+import SuperCheckbox from "../h4/common/c3-SuperCheckbox/SuperCheckbox";
 
-// export type UserType =
+export type UserType = {
+    _id: number,
+    name: string,
+    age: number,
+}
 
 const initialPeople = [
     {_id: 0, name: 'Кот', age: 3},
@@ -14,33 +28,84 @@ const initialPeople = [
 ]
 
 function HW8() {
-    const [people, setPeople] = useState<any>(initialPeople) // need to fix any
+    const [people, setPeople] = useState<Array<UserType>>(initialPeople) // need to fix any
+    const [nameSort, setNameSort] = useState<'up' | 'down'>('up')
+    const [ageSort, setAgeSort] = useState<'up' | 'down'>('up')
+    const [age, setAge] = useState<number>(18)
+    const [checked, setChecked] = useState<boolean>(false)
 
-    // need to fix any
-    const finalPeople = people.map((p: any) => (
-        <div key={p._id}>
-            some name, age
-        </div>
+    const finalPeople = people.map((p: UserType) => (
+        <SGridTableRow key={p._id}>
+            <SGridTableCell>
+                {p.name}
+            </SGridTableCell>
+            <SGridTableCell>
+                {p.age}
+            </SGridTableCell>
+        </SGridTableRow>
     ))
 
-    const sortUp = () => setPeople(homeWorkReducer(initialPeople, {type: 'sort', payload: 'up'}))
+    const onNameSortClickHandler = () => {
+        setPeople(homeWorkReducer(people, nameSortAC(nameSort)))
+        setNameSort(nameSort === 'up' ? 'down' : 'up')
+    }
+    const onAgeSortClickHandler = () => {
+        setPeople(homeWorkReducer(people, ageSortAC(ageSort)))
+        setAgeSort(ageSort === 'up' ? 'down' : 'up')
+    }
+
+    const onChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
+        let value = +e.currentTarget.value
+        if (value >= 0 && +value <= 100) setAge(value)
+        if (checked) {
+            setChecked(false)
+            setPeople(initialPeople)
+        }
+    }
+
+    const replaceNulls = (value: number) => String(value).replace(/^0.+/, '')
+
+    const onChangeChecked = (e: ChangeEvent<HTMLInputElement>) => {
+        if (!checked) setPeople(homeWorkReducer(people, {type: 'check', payload: age}))
+        setChecked(e.currentTarget.checked)
+        if (checked) setPeople(initialPeople)
+    }
 
     return (
-        <div>
-            <hr/>
-            homeworks 8
-
-            {/*should work (должно работать)*/}
-            {finalPeople}
-
-            <div><SuperButton onClick={sortUp}>sort up</SuperButton></div>
-            <div>sort down</div>
-            check 18
-
-            <hr/>
+        <div className={s.column}>
+            <h1>
+                homeworks 8
+            </h1>
+            <SGridTable>
+                <SGridTablePanel>
+                    <SuperCheckbox
+                        checked={checked}
+                        onChange={onChangeChecked}
+                    />
+                    show older than
+                    <SGridTablePanelInput type={"number"} value={replaceNulls(age)} onChange={onChangeInput} />
+                </SGridTablePanel>
+                <SGridTableRow>
+                    <SGridTitleCell onClick={onNameSortClickHandler}>
+                        Name
+                        <SGridTitleCellSort sort={nameSort}>
+                            <SortIcon />
+                        </SGridTitleCellSort>
+                    </SGridTitleCell>
+                    <SGridTitleCell onClick={onAgeSortClickHandler}>
+                        Age
+                        <SGridTitleCellSort sort={ageSort}>
+                            <SortIcon />
+                        </SGridTitleCellSort>
+                    </SGridTitleCell>
+                </SGridTableRow>
+                {finalPeople.length > 0
+                    ? finalPeople
+                    : <SListNotFound>people not found</SListNotFound>
+                }
+            </SGridTable>
             {/*для личного творчества, могу проверить*/}
             {/*<AlternativePeople/>*/}
-            <hr/>
         </div>
     )
 }
