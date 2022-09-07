@@ -47,10 +47,9 @@ export const SHeaderNav = styled.div<TSHeaderNavProps>(({isActive}) => ({
         fontWeight: "bold",
         textShadow: "0 0 10px #4e68af"
     }
-
 }))
 
-export const SHeaderNavTrigger = styled.div<TSHeaderNavTriggerProps>(({isOpened}) => ({
+export const SHeaderNavTrigger = styled.div<TSHeaderNavTriggerProps>(({isOpened, ...props}) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -58,12 +57,23 @@ export const SHeaderNavTrigger = styled.div<TSHeaderNavTriggerProps>(({isOpened}
     borderRadius: "50%",
     width: 60,
     height: 60,
+    fontSize: 12,
     marginLeft: 0,
     transition: "0.3s",
     userSelect: "none",
+    svg: {
+        width: 30,
+        height: 30,
+        opacity: 0.8,
+        transition: "0.2s",
+    },
     ...isOpened && {
         opacity: 0.5,
-        color: theme.colors.secondary,
         marginRight: 20,
+        svg: {
+            opacity: 0,
+            width: 24,
+            height: 24,
+        },
     }
 }))

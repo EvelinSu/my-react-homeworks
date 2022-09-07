@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {SHeader, SHeaderNav, SHeaderNavList, SHeaderNavTrigger} from "./styled";
 import {TNavLinks, TNavLinksLabel} from "./types";
 import {useLocation, useNavigate} from "react-router-dom";
+import BurgerIcon from "../../../icons/BurgerIcon";
 
 function Header() {
     const [isOpened, setIsOpened] = useState<boolean>(true)
@@ -14,7 +15,7 @@ function Header() {
             onMouseLeave={() => setIsOpened(false)}
         >
             <SHeaderNavTrigger isOpened={isOpened}>
-                Menu
+                <BurgerIcon/>
             </SHeaderNavTrigger>
             <SHeaderNavList isOpened={isOpened}>
                 {navLinks.map(({label, link, id}) => (
