@@ -18,8 +18,7 @@ export const homeWorkReducer = (state: Array<UserType>, action: TActions): Array
             return stateCopy
         }
         case 'check': {
-            let stateCopy = [...state]
-            return stateCopy.filter(el => el.age > action.payload)
+            return state.filter(el => el.age > action.payload)
         }
         default:
             return state
