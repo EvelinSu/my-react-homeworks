@@ -12,18 +12,18 @@ const messages = [
     },
     {
         id: 2,
-        avatar: 'https://i.imgur.com/4KVIig9.png',
-        name: 'Фанат стайлед компонентс',
-        message: 'В моих венах течет Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-        time: '624:71',
+        avatar: 'https://i.imgur.com/H1ZlGk9.png',
+        name: 'Простой студентик',
+        message: 'Игнат, проверь пж домашки, ради христа (ノಠ益ಠ)ノ彡┻━┻',
+        time: '22:01',
         isMineMessage: true,
     },
     {
         id: 3,
         avatar: 'https://sun9-74.userapi.com/Ph-WiuOtF985il9AvN9JqiCWedmHtSGSSTXrSA/ltEB2Z2-YO4.jpg',
         name: 'Name',
-        message: 'Может нужно таблеток попить?',
-        time: '22:01',
+        message: 'No （\\#-_-)\\┯━┯',
+        time: '624:71',
     },
 ]
 

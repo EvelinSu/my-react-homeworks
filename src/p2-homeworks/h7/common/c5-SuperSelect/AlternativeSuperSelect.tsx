@@ -21,6 +21,7 @@ function AlternativeSuperSelect(props: TAlternativeSuperSelect) {
     const [hoveredElement, setHoveredElement] = useState(props.value)
 
     const onKeyHandler = (e: React.KeyboardEvent<HTMLDivElement>) => {
+        window.addEventListener("keydown", (event) => event.preventDefault()) // костыль для запрета глобал скролла
         for (let i = 0; i < props.options.length; i++) {
             if (e.key === 'ArrowDown' && props.options[i] === hoveredElement) {
                 let verify = props.options[i + 1] || props.options[0]
@@ -32,7 +33,7 @@ function AlternativeSuperSelect(props: TAlternativeSuperSelect) {
                 props.onChangeOption(verify)
                 setHoveredElement(verify)
             }
-            if (e.key === 'Enter' || e.key === 'Escape'){
+            if (e.key === 'Enter' || e.key === 'Escape') {
                 setOpened(false)
             }
         }
