@@ -23,7 +23,7 @@ function HW4() {
 
     return (
         <div>
-            <h1>
+            <h1 title={"Задача: сделать свои универсальные переиспользуемые компоненты"}>
                 homeworks 4
             </h1>
             <div className={s.wrapper}>

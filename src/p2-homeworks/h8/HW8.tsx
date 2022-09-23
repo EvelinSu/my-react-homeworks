@@ -73,7 +73,7 @@ function HW8() {
 
     return (
         <div className={s.column}>
-            <h1>
+            <h1 title={"Сортировка пользователей по имени, фильтрация по достигнутому возрасту"}>
                 homeworks 8
             </h1>
             <SGridTable>
