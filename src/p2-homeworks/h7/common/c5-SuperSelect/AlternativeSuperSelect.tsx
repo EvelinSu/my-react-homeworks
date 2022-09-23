@@ -7,7 +7,7 @@ import {
     SSuperSelectInputWrapper,
     SSuperSelectWrapper
 } from "./styled";
-import ExpandMoreIcon from "../../../../icons/ExpandMoreIcon";
+import ExpandMoreIcon from "../../../../assets/icons/ExpandMoreIcon";
 
 type TAlternativeSuperSelect = {
     options: Array<string>

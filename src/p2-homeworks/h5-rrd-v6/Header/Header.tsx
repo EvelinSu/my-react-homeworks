@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import {SHeader, SHeaderNav, SHeaderNavList, SHeaderNavTrigger} from "./styled";
 import {TNavLinks, TNavLinksLabel} from "./types";
 import {useLocation, useNavigate} from "react-router-dom";
-import BurgerIcon from "../../../icons/BurgerIcon";
+import BurgerIcon from "../../../assets/icons/BurgerIcon";
 
 function Header() {
     const [isOpened, setIsOpened] = useState<boolean>(true)

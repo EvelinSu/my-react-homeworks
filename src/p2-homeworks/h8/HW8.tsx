@@ -9,7 +9,7 @@ import {
     SGridTitleCell,
     SGridTitleCellSort, SListNotFound
 } from "./styled";
-import SortIcon from "../../icons/SortIcon";
+import SortIcon from "../../assets/icons/SortIcon";
 import SuperCheckbox from "../h4/common/c3-SuperCheckbox/SuperCheckbox";
 
 export type UserType = {
