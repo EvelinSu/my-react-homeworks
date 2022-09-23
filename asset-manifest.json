@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/my-react-homeworks/static/css/main.dcb8741b.chunk.css",
-    "main.js": "/my-react-homeworks/static/js/main.e94c6ff2.chunk.js",
-    "main.js.map": "/my-react-homeworks/static/js/main.e94c6ff2.chunk.js.map",
+    "main.js": "/my-react-homeworks/static/js/main.ae3ad2a9.chunk.js",
+    "main.js.map": "/my-react-homeworks/static/js/main.ae3ad2a9.chunk.js.map",
     "runtime-main.js": "/my-react-homeworks/static/js/runtime-main.afc6e26c.js",
     "runtime-main.js.map": "/my-react-homeworks/static/js/runtime-main.afc6e26c.js.map",
     "static/js/2.1d2814c2.chunk.js": "/my-react-homeworks/static/js/2.1d2814c2.chunk.js",
     "static/js/2.1d2814c2.chunk.js.map": "/my-react-homeworks/static/js/2.1d2814c2.chunk.js.map",
     "index.html": "/my-react-homeworks/index.html",
-    "precache-manifest.17159c07f2371f0f965c35202864a360.js": "/my-react-homeworks/precache-manifest.17159c07f2371f0f965c35202864a360.js",
+    "precache-manifest.9be11c1be4678f4e169dda30b5cedbc2.js": "/my-react-homeworks/precache-manifest.9be11c1be4678f4e169dda30b5cedbc2.js",
     "service-worker.js": "/my-react-homeworks/service-worker.js",
     "static/css/main.dcb8741b.chunk.css.map": "/my-react-homeworks/static/css/main.dcb8741b.chunk.css.map",
     "static/js/2.1d2814c2.chunk.js.LICENSE.txt": "/my-react-homeworks/static/js/2.1d2814c2.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.afc6e26c.js",
     "static/js/2.1d2814c2.chunk.js",
     "static/css/main.dcb8741b.chunk.css",
-    "static/js/main.e94c6ff2.chunk.js"
+    "static/js/main.ae3ad2a9.chunk.js"
   ]
 }
