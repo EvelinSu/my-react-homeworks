@@ -1,41 +1,39 @@
 {
-  "name": "simple-react-homeworks",
-  "homepage": "https://EvelinSu.github.io/my-react-homeworks",
+  "name": "homeworks2",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
-    "@types/react-redux": "^7.1.24",
-    "@types/react-router-dom": "^5.3.3",
-    "@types/redux": "^3.6.0",
-    "@types/styled-components": "^5.1.25",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^13.0.0",
+    "@testing-library/user-event": "^13.2.1",
+    "@types/jest": "^27.0.1",
+    "@types/node": "^16.7.13",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@types/styled-components": "^5.1.26",
     "@types/uuid": "^8.3.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-redux": "^8.0.4",
-    "react-router-dom": "^6.3.0",
-    "react-scripts": "3.4.1",
+    "react-router-dom": "^6.4.1",
+    "react-scripts": "5.0.1",
     "redux": "^4.2.0",
     "styled-components": "^5.3.5",
-    "typescript": "^4.7.4",
-    "uuid": "^8.3.2"
+    "typescript": "^4.4.2",
+    "uuid": "^9.0.0",
+    "web-vitals": "^2.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [
@@ -50,7 +48,6 @@
     ]
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^2.0.7",
     "gh-pages": "^4.0.0",
     "prettier": "^2.7.1"
   }

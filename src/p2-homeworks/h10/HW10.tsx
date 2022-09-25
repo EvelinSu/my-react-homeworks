@@ -25,21 +25,18 @@ function HW10() {
     return (
         <div>
             <h1 title={"Работа с редаксом, при нажатии на кнопку запускать загрузку на какое то время, при" +
-                " желании вставить свой лоадер"}>
+                " желании вставить свой лоадер"}
+            >
                 homeworks 10
             </h1>
             <div className={s.column}>
                 {/*should work (должно работать)*/}
                 <SLoadingWrapper>
                     {loading
-                        ? (
-                            <SLoadingGif src={loadingGif}/>
-                        ) : (
-                            <SuperButton onClick={setLoading}>set loading...</SuperButton>
-                        )
+                        ? <SLoadingGif src={loadingGif} />
+                        : <SuperButton onClick={setLoading}>set loading...</SuperButton>
                     }
                 </SLoadingWrapper>
-
                 {/*для личного творчества, могу проверить*/}
                 {/*<Alternative/>*/}
             </div>
