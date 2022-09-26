@@ -1,41 +1,53 @@
-import React, {useState} from 'react'
-import SuperRange from './common/c7-SuperRange/SuperRange'
-import SuperDoubleRange from './common/c8-SuperDoubleRange/SuperDoubleRange'
+import React, {useState} from "react";
+import SuperRange from "./common/c7-SuperRange/SuperRange";
+import SuperDoubleRange from "./common/c8-SuperDoubleRange/SuperDoubleRange";
 import s from "../h4/HW4.module.css";
 
 function HW11() {
 
-    const [value1, setValue1] = useState(0)
-    const [value2, setValue2] = useState(100)
+    //текущее значение инпута
+    const [value, setValue] = useState(430)
+
+    // текущее значение двойного инпута
+    const [value1, setValue1] = useState(430);
+    const [value2, setValue2] = useState(700);
+
+    // диапазон
+    const minmax = [230, 1700];
 
     return (
         <div>
-            <h1>
-                homeworks 11
-            </h1>
+            <h1 title={'Задача: сделать изменение стейта при передвигании ползунка. Доп: сделать свой double-range'}>homeworks
+                11</h1>
             {/*should work (должно работать)*/}
-            <div className={s.column}>
-                <span>{value1}</span>
-                <SuperRange
-                    onChangeRange={setValue1}
-                    value={value1}
-                    // сделать так чтоб value1 изменялось
-                />
-            </div>
-            <div>
-                <span>{value1}</span>
-                <SuperDoubleRange
-                   // onChangeRange={() => [setValue1, setValue2]}
-                    value={[value1, value2]}
-                    // сделать так чтоб value1 и value2 изменялось
-                />
-                <span>{value2}</span>
+            <div className={s.block}>
+                <div className={s.block}>
+                    <span style={{opacity: 0.4}}>default html input</span>
+                    <span style={{opacity: 0.4}}>{value}</span>
+                    <SuperRange
+                        onChangeRange={setValue}
+                        value={value}
+                        minmax={minmax}
+                        // сделать так чтоб value1 изменялось
+                    />
+                </div>
+                <div className={s.block}>
+                    <span style={{opacity: 0.4}}>my custom double-range input</span>
+                    <span style={{opacity: 0.4}}>{value1 + ' - ' + value2}</span>
+                    <SuperDoubleRange
+                        setValue1={setValue1}
+                        setValue2={setValue2}
+                        minmax={minmax}
+                        value={[value1, value2]}
+                        // сделать так чтоб value1 и value2 изменялось
+                    />
+                </div>
             </div>
             {/*для личного творчества, могу проверить*/}
             {/*<AlternativeSuperRange/>*/}
             {/*<AlternativeSuperDoubleRange/>*/}
         </div>
-    )
+    );
 }
 
-export default HW11
+export default HW11;
