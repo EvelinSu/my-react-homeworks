@@ -61,7 +61,6 @@ export const SDoubleRange = styled.input((props) => ({
         backgroundColor: "transparent",
         pointerEvents: "none",
         transition: "0.2s",
-
     },
     '&[type="range"]::-webkit-slider-runnable-track': {
         ...rangeStyles.track,
@@ -75,7 +74,6 @@ export const SDoubleRange = styled.input((props) => ({
     },
     '&[type="range"]::-webkit-slider-thumb': {
         ...rangeStyles.thumb,
-
     },
     '&[type="range"]::-moz-range-thumb': {
         ...rangeStyles.thumb,

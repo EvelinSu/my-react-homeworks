@@ -15,16 +15,35 @@ function HW11() {
     // диапазон
     const minmax = [230, 1700];
 
+    const [step, setStep] = useState(10)
+
+    const onChangeStep = (e: React.ChangeEvent<HTMLInputElement>) => {
+        let newStepValue = +e.currentTarget.value
+        if (newStepValue <= 100 && newStepValue > 0) setStep(newStepValue)
+
+    }
+
     return (
         <div>
             <h1 title={'Задача: сделать изменение стейта при передвигании ползунка. Доп: сделать свой double-range'}>homeworks
                 11</h1>
             {/*should work (должно работать)*/}
             <div className={s.block}>
+                <div>
+                    <span style={{opacity: 0.4, paddingRight: 10}}>
+                        you can change the input step
+                    </span>
+                    <input style={{width: 60}}
+                           type={"number"}
+                           value={step}
+                           onChange={onChangeStep}
+                    />
+                </div>
                 <div className={s.block}>
                     <span style={{opacity: 0.4}}>default html input</span>
                     <span style={{opacity: 0.4}}>{value}</span>
                     <SuperRange
+                        step={step}
                         onChangeRange={setValue}
                         value={value}
                         minmax={minmax}
@@ -35,6 +54,7 @@ function HW11() {
                     <span style={{opacity: 0.4}}>my custom double-range input</span>
                     <span style={{opacity: 0.4}}>{value1 + ' - ' + value2}</span>
                     <SuperDoubleRange
+                        step={step}
                         setValue1={setValue1}
                         setValue2={setValue2}
                         minmax={minmax}

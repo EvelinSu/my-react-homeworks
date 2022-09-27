@@ -18,7 +18,7 @@ const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = ({
     minmax,
     // min, max, step, disable, ...
 }) => {
-    // сделать самому, можно подключать библиотеки
+
     let gap = minmax[1] / 10
 
     const onChangeValue1 = (newValue: number) => {
