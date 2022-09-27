@@ -1,24 +1,15 @@
 import React from "react";
-import s from "./HW12.module.css";
-
-const themes = ['dark', 'red', 'some'];
 
 function HW12() {
-    const theme = 'some'; // useSelector
-
-    // useDispatch, onChangeCallback
 
     return (
-        <div className={s[theme]}>
-            <hr/>
-            <span className={s[theme + '-text']}>
+        <div>
+            <h1 title={"Задача - сделать смену темы на сайте с помощью select или radio input"}>
                 homeworks 12
+            </h1>
+            <span style={{opacity: 0.4}}>
+                You can change the theme in the header of the site
             </span>
-
-            {/*should work (должно работать)*/}
-            {/*SuperSelect or SuperRadio*/}
-
-            <hr/>
         </div>
     );
 }

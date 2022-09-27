@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import {SuperInputTextPropsType, TSSuperInputTextWrapperProps} from "./types";
-import {theme} from "../../constants";
 
 export const SSuperInputTextWrapper = styled.div<TSSuperInputTextWrapperProps>(({...props}) => ({
     position: "relative",
@@ -10,14 +9,14 @@ export const SSuperInputTextWrapper = styled.div<TSSuperInputTextWrapperProps>((
 
 }))
 
-export const SSuperInputText = styled.input<SuperInputTextPropsType>(({error, ...props}) => ({
+export const SSuperInputText = styled.input<SuperInputTextPropsType>(({error, theme, ...props}) => ({
     padding: "8px 10px",
     borderRadius: 10,
     width: "100%",
     border: "none",
     color: "inherit",
     outline: `1px solid ${theme.colors.primary}`,
-    backgroundColor: theme.colors.input.default,
+    backgroundColor: theme.colors.input.secondary,
     "&:hover, &:focus": {
         backgroundColor: theme.colors.input.hover,
     },
@@ -26,13 +25,13 @@ export const SSuperInputText = styled.input<SuperInputTextPropsType>(({error, ..
     },
 }))
 
-export const SSuperCheckbox = styled.input<SuperInputTextPropsType>(({...props}) => ({
+export const SSuperCheckbox = styled.input<SuperInputTextPropsType>(({theme, ...props}) => ({
     appearance: "none",
     padding: 10,
     width: 20,
     height: 20,
     alignSelf: "center",
-    backgroundColor: "rgba(119,143,176,0.65)",
+    backgroundColor: "rgba(255, 255, 255, 0.1)",
     borderRadius: "50%",
     marginRight: 10,
     position: "relative",
@@ -54,7 +53,7 @@ export const SSuperCheckbox = styled.input<SuperInputTextPropsType>(({...props})
     }
 }))
 
-export const SSuperInputTextError = styled.div<TSSuperInputTextWrapperProps>(({...props}) => ({
+export const SSuperInputTextError = styled.div<TSSuperInputTextWrapperProps>(({theme, ...props}) => ({
     color: theme.colors.danger,
     fontSize: 14,
     position: "absolute",

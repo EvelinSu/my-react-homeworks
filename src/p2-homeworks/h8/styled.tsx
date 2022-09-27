@@ -1,13 +1,12 @@
 import styled from "styled-components";
-import {theme} from "../h4/constants";
 
-export const SGridTable = styled.div((props) => ({
+export const SGridTable = styled.div(({theme}) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     gap: 5,
     padding: "15px 10px 10px 10px",
-    backgroundColor: "rgba(0, 0, 0, 0.15)",
+    backgroundColor: theme.colors.darkAlpha,
     borderRadius: 20,
     minHeight: 335,
     width: 290,
@@ -23,19 +22,18 @@ export const SGridTablePanel = styled.div((props) => ({
     padding: 5,
 }))
 
-
-export const SGridTablePanelInput = styled.input((props) => ({
+export const SGridTablePanelInput = styled.input(({theme}) => ({
     width: 45,
     padding: 0,
     marginLeft: 10,
-    color: "#798fad",
+    color: theme.colors.secondary,
     fontWeight: "bolder",
     fontSize: 18,
     backgroundColor: "transparent",
 
 }))
 
-export const SGridTitleCell = styled.div((props) => ({
+export const SGridTitleCell = styled.div(({theme}) => ({
     display: "flex",
     alignItems: "center",
     gap: 3,
@@ -43,7 +41,7 @@ export const SGridTitleCell = styled.div((props) => ({
     fontWeight: 600,
     opacity: 0.8,
     cursor: "pointer",
-    color: "#798fad",
+    color: theme.colors.secondary,
     userSelect: "none",
     "&:hover": {
         opacity: 0.6,

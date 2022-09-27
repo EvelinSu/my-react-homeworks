@@ -4,6 +4,9 @@ import s from './HW4.module.css'
 import SuperCheckbox from './common/c3-SuperCheckbox/SuperCheckbox'
 import {SSuperInputTextError, SSuperInputTextWrapper} from "./common/c1-SuperInputText/styled";
 import SuperButton from "./common/c2-SuperButton/SuperButton";
+import {useSelector} from "react-redux";
+import {AppStoreType} from "../h10/bll/store";
+import {TTheme} from "../h12/bll/themeReducer";
 
 function HW4() {
     const [text, setText] = useState<string>('')
@@ -18,6 +21,7 @@ function HW4() {
     }
 
     const [checked, setChecked] = useState<boolean>(false)
+    const theme = useSelector<AppStoreType, TTheme>(state => state.theme)
 
     const testOnChange = (e: ChangeEvent<HTMLInputElement>) => setChecked(e.currentTarget.checked)
 
@@ -26,7 +30,7 @@ function HW4() {
             <h1 title={"Задача: сделать свои универсальные переиспользуемые компоненты"}>
                 homeworks 4
             </h1>
-            <div className={s.wrapper}>
+            <div className={s.wrapper} style={{backgroundColor: theme.colors.darkAlpha}}>
                 <SSuperInputTextWrapper>
                     <SuperInputText
                         placeholder={"Введите текст..."}
@@ -41,7 +45,7 @@ function HW4() {
                     </SSuperInputTextError>
                 </SSuperInputTextWrapper>
                 <SSuperInputTextWrapper>
-                    <SuperInputText/>
+                    <SuperInputText />
                 </SSuperInputTextWrapper>
                 <div className={s.row}>
                     <SuperButton>
@@ -54,7 +58,6 @@ function HW4() {
                         disabled
                     </SuperButton>
                 </div>
-
                 {/*----------------------------------------------------*/}
                 <SuperCheckbox
                     checked={checked}

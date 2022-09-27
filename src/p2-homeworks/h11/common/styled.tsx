@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import {theme} from "../../h4/constants";
 
 export const SDoubleRangeWrapper = styled.div((props) => ({
     position: "relative",
@@ -14,14 +13,14 @@ type TSRangeProps = {
     value1: number;
     value2: number;
 };
-export const SRangeTrack = styled.div<TSRangeProps>(({value1, value2}) => ({
+export const SRangeTrack = styled.div<TSRangeProps>(({theme, value1, value2}) => ({
     borderRadius: 10,
     position: "absolute",
     height: rangeStyles.track.height,
     left: 0,
     right: 0,
     background: `linear-gradient(to right, rgba(255, 255,255, 0.1) ${value1}%, 
-                                           ${theme.colors.primary} ${value1}% ${value2}%, 
+                                           ${theme.colors.secondary} ${value1}% ${value2}%, 
                                            rgba(255, 255,255, 0.1) ${value2}%)`,
 }));
 
@@ -34,7 +33,6 @@ const rangeStyles: any = {
         "-webkit-appearance": "none !important",
         height: 20,
         width: 20,
-        backgroundColor: theme.colors.primary,
         cursor: "pointer",
         borderRadius: 30,
         marginTop: -6,
@@ -47,7 +45,7 @@ const rangeStyles: any = {
     }
 }
 
-export const SDoubleRange = styled.input((props) => ({
+export const SDoubleRange = styled.input(({theme}) => ({
     '&[type="range"]': {
         "-webkit-appearance": "none !important",
         "-moz-appearance": "none",
@@ -73,12 +71,15 @@ export const SDoubleRange = styled.input((props) => ({
         ...rangeStyles.track,
     },
     '&[type="range"]::-webkit-slider-thumb': {
+        backgroundColor: theme.colors.secondary,
         ...rangeStyles.thumb,
     },
     '&[type="range"]::-moz-range-thumb': {
+        backgroundColor: theme.colors.secondary,
         ...rangeStyles.thumb,
     },
     '&[type="range"]::-ms-thumb': {
+        backgroundColor: theme.colors.secondary,
         ...rangeStyles.thumb,
     },
 }));

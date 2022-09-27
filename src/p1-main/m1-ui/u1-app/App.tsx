@@ -1,23 +1,26 @@
 import React from 'react'
 import s from './App.module.css'
-import HW1 from '../../../p2-homeworks/h1/HW1'
-import HW2 from "../../../p2-homeworks/h2/HW2";
-import HW3 from "../../../p2-homeworks/h3/HW3";
-import HW4 from "../../../p2-homeworks/h4/HW4";
 import HW5 from '../../../p2-homeworks/h5-rrd-v6/HW5';
+import {ThemeProvider} from "styled-components";
+import {useSelector} from "react-redux";
+import {AppStoreType} from "../../../p2-homeworks/h10/bll/store";
+import {TTheme} from "../../../p2-homeworks/h12/bll/themeReducer";
 
 function App() {
-    return (
-        <div className={s.App}>
-            <h1>react homeworks:</h1>
-            <br/>
-            {/*<HW1/>*/}
-            {/*<HW2/>*/}
-            {/*<HW3/>*/}
-            {/*<HW4/>*/}
-            <HW5/>
+    const theme = useSelector<AppStoreType, TTheme>(state => state.theme)
 
-        </div>
+    return (
+        <ThemeProvider theme={theme}>
+            <div className={s.App} style={{backgroundColor: theme.colors.primary}}>
+                <h1>react homeworks:</h1>
+                <br />
+                {/*<HW1/>*/}
+                {/*<HW2/>*/}
+                {/*<HW3/>*/}
+                {/*<HW4/>*/}
+                <HW5 />
+            </div>
+        </ThemeProvider>
     )
 }
 

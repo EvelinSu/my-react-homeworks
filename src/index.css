@@ -5,9 +5,7 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #3a4365;
     min-width: 600px;
-
 }
 
 code {
@@ -15,6 +13,6 @@ code {
     monospace;
 }
 
-*{
+* {
     box-sizing: border-box;
 }

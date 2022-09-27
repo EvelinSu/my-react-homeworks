@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import {TSMessageContainerProps, TSMessageProps, TSMessageTextProps} from "./types";
-import {theme} from "../../h4/constants";
 
 export const STitle = styled.div(props => ({
     marginTop: 10,
@@ -11,10 +10,10 @@ export const STitle = styled.div(props => ({
 
 }))
 
-export const SChat = styled.div(props => ({
+export const SChat = styled.div(({theme, ...props}) => ({
     display: "flex",
     flexDirection: "column",
-    backgroundColor: theme.colors.secondary,
+    backgroundColor: theme.colors.darkAlpha,
     padding: 30,
     gap: 20,
     columnGap: 20,
@@ -46,33 +45,35 @@ export const SMessageAvatar = styled.img(props => ({
     objectFit: "cover",
 }))
 
-export const SMessageContainer = styled.div<TSMessageContainerProps>((props) => ({
+export const SMessageContainer = styled.div<TSMessageContainerProps>(({theme, ...props}) => ({
     display: "flex",
     flexDirection: "column",
     position: "relative",
     padding: " 5px 10px",
-    backgroundColor: "#405273",
+    backgroundColor: theme.colors.primary,
     borderRadius: "10px 10px 10px 10px",
     maxWidth: "50%",
+    transition: "1s",
     "&:after": {
         content: '""',
         position: "absolute",
         width: 30,
         height: 25,
-        borderRight: "10px solid #405273",
+        borderRight: `10px solid ${theme.colors.primary}`,
         borderBottomRightRadius: "35%",
         left: -35,
         bottom: 10,
+        transition: "1s",
         transform: "scale(1.5) skewY(10deg) skewX(-10deg)",
         ...props.isMineMessage && {
-            borderRight: "10px solid #40679d",
+            borderRight: `10px solid ${theme.colors.secondary}`,
             left: "initial",
             right: -35,
             transform: "scale(-1.5, 1.5) skewY(10deg) skewX(-10deg)",
         }
     },
     ...props.isMineMessage && {
-        backgroundColor: "#40679d",
+        backgroundColor: theme.colors.secondary,
     }
 }))
 
@@ -82,10 +83,12 @@ export const SMessageContent = styled.div(props => ({
     zIndex: 1,
 }))
 
-export const SMessageTitle = styled.span(props => ({
+export const SMessageTitle = styled.span(({theme, ...props}) => ({
     fontWeight: "bold",
     zIndex: 1,
-    color: "#8ab5e6",
+    color: theme.colors.secondary,
+    filter: "brightness(150%)",
+    msFilter: "brightness(150%)",
     cursor: "pointer",
 }))
 

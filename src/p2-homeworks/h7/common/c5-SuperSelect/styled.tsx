@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import {theme} from "../../../h4/constants";
+import {Simulate} from "react-dom/test-utils";
+import blur = Simulate.blur;
 
 export const SSelect = styled.select(props => ({
     padding: "7px 15px",
@@ -70,14 +71,14 @@ export const SSuperSelectInputIcon = styled.div<TInputProps>(props => ({
     }
 }))
 
-export const SSuperOptionsList = styled.div(props => ({
+export const SSuperOptionsList = styled.div(({theme, ...props}) => ({
     justifySelf: "center",
     position: "absolute",
     top: 40,
     maxWidth: "100%",
     width: "100%",
     borderRadius: 10,
-    backgroundColor: theme.colors.primary,
+    backgroundColor: theme.colors.secondary,
     maxHeight: 160,
     overflow: "auto",
 }))
@@ -90,7 +91,7 @@ export const SSuperOption = styled.div<TInputProps>(props => ({
     borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
     cursor: "pointer",
     "&::last-of-type": {
-      borderBottom: "none",
+        borderBottom: "none",
     },
     ...props.isHovered && {
         backgroundColor: "rgba(255, 255, 255, 0.1)",

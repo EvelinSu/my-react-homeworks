@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import {TSHeaderNavListProps, TSHeaderNavProps, TSHeaderNavTriggerProps} from "./types";
-import {NavLink} from "react-router-dom";
-import {inherits} from "util";
-import {theme} from "../../h4/constants";
+import {DefaultInputPropsType} from "../../h11/common/c7-SuperRange/SuperRange";
 
 export const SHeader = styled.div((props) => ({
     display: "flex",
@@ -13,6 +11,55 @@ export const SHeader = styled.div((props) => ({
     marginTop: 75,
 }))
 
+export const SColorInputWrapper = styled.div(({theme}) => ({
+    display: "flex",
+    flexDirection: "column",
+    position: "relative",
+    borderRadius: "50%",
+    height: 60,
+    width: 60,
+    gap: 2,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: theme.colors.darkAlpha,
+    overflow: "hidden",
+    border: "2px solid transparent",
+    "&:after": {
+        content: `"theme"`,
+        position: "absolute",
+        pointerEvents: "none",
+        transition: "0.2s",
+        opacity: 0,
+    },
+    "&:hover": {
+        "&:after": {
+            opacity: 0.6,
+        },
+    }
+}))
+
+export const SColorInput = styled.input((props) => ({
+    padding: 0,
+    height: 30,
+    width: 60,
+    backgroundColor: "transparent",
+    border: "none",
+    outline: "none",
+    "-webkit-appearance": "none",
+    "&::-webkit-color-swatch-wrapper": {
+        padding: 0,
+    },
+    "&::-webkit-color-swatch": {
+        border: "none",
+    },
+}))
+
+export const SHeaderBlock = styled.div((props) => ({
+    display: "flex",
+    alignItems: "center",
+    padding: 20,
+    zIndex: 10,
+}))
 
 export const SHeaderNavList = styled.div<TSHeaderNavListProps>(({isOpened, ...props}) => ({
     display: "flex",
@@ -27,7 +74,7 @@ export const SHeaderNavList = styled.div<TSHeaderNavListProps>(({isOpened, ...pr
     }
 }))
 
-export const SHeaderNav = styled.div<TSHeaderNavProps>(({isActive}) => ({
+export const SHeaderNav = styled.div<TSHeaderNavProps>(({isActive, theme}) => ({
     padding: 10,
     color: "inherit",
     textDecoration: "none",
@@ -43,17 +90,17 @@ export const SHeaderNav = styled.div<TSHeaderNavProps>(({isActive}) => ({
     },
     ...isActive && {
         pointerEvents: "none",
-        color: "#6075b7",
+        color: theme.colors.secondary,
         fontWeight: "bold",
-        textShadow: "0 0 10px #4e68af"
+        textShadow: `0 0 10px rgba(0, 0, 0, 0.3)`
     }
 }))
 
-export const SHeaderNavTrigger = styled.div<TSHeaderNavTriggerProps>(({isOpened, ...props}) => ({
+export const SHeaderNavTrigger = styled.div<TSHeaderNavTriggerProps>(({theme, isOpened, ...props}) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: theme.colors.secondary,
+    backgroundColor: theme.colors.darkAlpha,
     borderRadius: "50%",
     width: 60,
     height: 60,

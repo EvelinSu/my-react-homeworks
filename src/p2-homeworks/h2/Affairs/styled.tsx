@@ -3,7 +3,7 @@ import {TSAffairPriorityProps, TSAffairsButtonProps, TSAffairsProps} from "./typ
 
 export const Priorities = {
     all: {
-        color: "#223452",
+        color: "",
     },
     low: {
         color: "#408dcc",
@@ -23,13 +23,13 @@ export const SAlternativeAffair = styled.div(props => ({
     padding: "20px 0"
 }))
 
-export const SAffairs = styled.div<TSAffairsProps>(({ priority }) => ({
+export const SAffairs = styled.div<TSAffairsProps>(({theme, priority}) => ({
     display: "flex",
     flexDirection: "column",
     gap: 15,
     columnGap: 15,
     rowGap: 15,
-    backgroundColor: Priorities[priority].color,
+    backgroundColor: Priorities[priority].color || theme.colors.darkAlpha,
     width: 350,
     minHeight: 278,
     padding: 30,
@@ -40,14 +40,14 @@ export const SAffairs = styled.div<TSAffairsProps>(({ priority }) => ({
 
 }))
 
-export const SAffairPriority = styled.span<TSAffairPriorityProps>(({ priority, activeFilter }) => ({
+export const SAffairPriority = styled.span<TSAffairPriorityProps>(({priority, activeFilter}) => ({
     display: "flex",
     fontSize: 14,
     color: activeFilter !== priority ? Priorities[priority].color : "rgba(255, 255,255, 0.8)",
     transition: "0.5s",
 }))
 
-export const SAffairsButton = styled.button<TSAffairsButtonProps>(({isActive,...props}) => ({
+export const SAffairsButton = styled.button<TSAffairsButtonProps>(({isActive, ...props}) => ({
     padding: "5px 10px",
     borderRadius: 10,
     cursor: "pointer",
@@ -70,7 +70,7 @@ export const SAffair = styled.div(props => ({
     gap: 15,
     columnGap: 15,
     rowGap: 15,
-    span:{
+    span: {
         overflow: "hidden",
         textOverflow: "ellipsis",
         whiteSpace: "nowrap",

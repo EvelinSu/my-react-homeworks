@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import {theme} from "../../../h4/constants";
 
 export const SSuperEditableSpanWrapper = styled.div((props) => ({
     display: "flex",
@@ -10,7 +9,7 @@ export const SSuperEditableSpanWrapper = styled.div((props) => ({
 type TSSuperEditableSpan = {
     maxWidth?: number | string
 }
-export const SSuperEditableSpan = styled.span<TSSuperEditableSpan>((props) => ({
+export const SSuperEditableSpan = styled.span<TSSuperEditableSpan>(({theme, ...props}) => ({
     padding: "7px 10px",
     borderRadius: 10,
     fontSize: 14,
@@ -18,7 +17,7 @@ export const SSuperEditableSpan = styled.span<TSSuperEditableSpan>((props) => ({
     maxWidth: props.maxWidth || "100%",
     border: "none",
     color: "inherit",
-    backgroundColor: theme.colors.secondary,
+    backgroundColor: theme.colors.darkAlpha,
     cursor: "pointer",
     userSelect: "none",
     whiteSpace: "nowrap",
