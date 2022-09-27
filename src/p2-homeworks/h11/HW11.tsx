@@ -8,19 +8,18 @@ function HW11() {
     //текущее значение инпута
     const [value, setValue] = useState(430)
 
-    // текущее значение двойного инпута
+    // текущие значения двойного инпута
     const [value1, setValue1] = useState(430);
-    const [value2, setValue2] = useState(700);
+    const [value2, setValue2] = useState(1700);
 
     // диапазон
-    const minmax = [230, 1700];
+    const minmax = [230, 3700];
 
-    const [step, setStep] = useState(10)
+    const [step, setStep] = useState(1)
 
     const onChangeStep = (e: React.ChangeEvent<HTMLInputElement>) => {
         let newStepValue = +e.currentTarget.value
         if (newStepValue <= 100 && newStepValue > 0) setStep(newStepValue)
-
     }
 
     return (
@@ -30,8 +29,8 @@ function HW11() {
             {/*should work (должно работать)*/}
             <div className={s.block}>
                 <div>
-                    <span style={{opacity: 0.4, paddingRight: 10}}>
-                        you can change the input step
+                    <span style={{opacity: 0.4, paddingRight: 10, fontSize: 14,}}>
+                        you can change the step
                     </span>
                     <input style={{width: 60}}
                            type={"number"}
@@ -40,7 +39,7 @@ function HW11() {
                     />
                 </div>
                 <div className={s.block}>
-                    <span style={{opacity: 0.4}}>default html input</span>
+                    <span style={{opacity: 0.4, fontSize: 14}}>default html input</span>
                     <span style={{opacity: 0.4}}>{value}</span>
                     <SuperRange
                         step={step}
@@ -51,7 +50,7 @@ function HW11() {
                     />
                 </div>
                 <div className={s.block}>
-                    <span style={{opacity: 0.4}}>my custom double-range input</span>
+                    <span style={{opacity: 0.4, fontSize: 14,}}>my custom double-range input</span>
                     <span style={{opacity: 0.4}}>{value1 + ' - ' + value2}</span>
                     <SuperDoubleRange
                         step={step}
