@@ -14,7 +14,7 @@ const messages = [
         id: 2,
         avatar: 'https://i.imgur.com/H1ZlGk9.png',
         name: 'Простой студентик',
-        message: 'Игнат, проверь пж домашки, ради христа (ノಠ益ಠ)ノ彡┻━┻',
+        message: 'Игнат, проверь пжпж домашки, ради христа (ノಠ益ಠ)ノ彡┻━┻',
         time: '22:01',
         isMineMessage: true,
     },

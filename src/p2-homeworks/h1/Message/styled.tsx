@@ -101,5 +101,5 @@ export const SMessageTime = styled.div(props => ({
     marginLeft: "auto",
     paddingLeft: 10,
     margin: "auto 0 -2px auto",
-    fontSize: "12px"
+    fontSize: "12px",
 }))

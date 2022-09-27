@@ -13,7 +13,7 @@ import {TMessageProps} from "./types";
 const Message: FC<TMessageProps> = ({message, time, avatar, name, ...props}) => {
     return (
         <SMessage isMineMessage={props.isMineMessage}>
-            <SMessageAvatar src={avatar}/>
+            <SMessageAvatar src={avatar} />
             <SMessageContainer isMineMessage={props.isMineMessage}>
                 <SMessageTitle>{name}</SMessageTitle>
                 <SMessageContent>
