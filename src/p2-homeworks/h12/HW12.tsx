@@ -8,7 +8,7 @@ function HW12() {
                 homeworks 12
             </h1>
             <span style={{opacity: 0.4}}>
-                You can change the theme in the header of the site
+                You can change theme in the header ↑
             </span>
         </div>
     );

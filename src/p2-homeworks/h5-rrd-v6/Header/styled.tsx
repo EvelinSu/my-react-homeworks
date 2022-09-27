@@ -1,14 +1,16 @@
 import styled from "styled-components";
 import {TSHeaderNavListProps, TSHeaderNavProps, TSHeaderNavTriggerProps} from "./types";
-import {DefaultInputPropsType} from "../../h11/common/c7-SuperRange/SuperRange";
 
 export const SHeader = styled.div((props) => ({
     display: "flex",
     alignItems: "center",
+    justifyContent: "center",
     padding: 20,
     zIndex: 10,
+    gap: 20,
+    columnGap: 20,
     position: "absolute",
-    marginTop: 75,
+    marginTop: 60,
 }))
 
 export const SColorInputWrapper = styled.div(({theme}) => ({
@@ -57,7 +59,7 @@ export const SColorInput = styled.input((props) => ({
 export const SHeaderBlock = styled.div((props) => ({
     display: "flex",
     alignItems: "center",
-    padding: 20,
+    padding: "20px 20px 20px 0",
     zIndex: 10,
 }))
 
