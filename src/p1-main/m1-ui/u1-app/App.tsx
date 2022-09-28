@@ -13,7 +13,6 @@ function App() {
         <ThemeProvider theme={theme}>
             <div className={s.App} style={{backgroundColor: theme.colors.primary}}>
                 <h1>react homeworks:</h1>
-                <br />
                 {/*<HW1/>*/}
                 {/*<HW2/>*/}
                 {/*<HW3/>*/}

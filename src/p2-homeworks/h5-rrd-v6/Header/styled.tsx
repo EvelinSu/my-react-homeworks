@@ -3,14 +3,39 @@ import {TSHeaderNavListProps, TSHeaderNavProps, TSHeaderNavTriggerProps} from ".
 
 export const SHeader = styled.div((props) => ({
     display: "flex",
+    flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    padding: 20,
+    textAlign: "center",
     zIndex: 10,
-    gap: 20,
     columnGap: 20,
-    position: "absolute",
-    marginTop: 60,
+}))
+
+export const SColorBlocksWrapper = styled.div((props) => ({
+    display: "flex",
+    gap: 15,
+
+}))
+
+type TSColorBlockProps = {
+    primary: string,
+    secondary: string
+    isActive: boolean
+}
+export const SColorBlock = styled.div<TSColorBlockProps>(({isActive, primary, secondary}) => ({
+    width: 30,
+    height: 30,
+    borderRadius: "50%",
+    outline: '2px solid rgba(0, 0, 0, 0.1)',
+    background: `linear-gradient(to bottom, ${primary} 48%, rgba(0, 0, 0, 0.1) 48% 53%, ${secondary} 53%)`,
+    cursor: "pointer",
+    "&:hover": {
+        transform: "scale(1.2)",
+    },
+    ...isActive && {
+        boxShadow: "0 0 10px 2px rgba(255, 255, 255, 0.3)",
+        transform: "scale(1.2)",
+    }
 }))
 
 export const SColorInputWrapper = styled.div(({theme}) => ({
@@ -26,18 +51,19 @@ export const SColorInputWrapper = styled.div(({theme}) => ({
     backgroundColor: theme.colors.darkAlpha,
     overflow: "hidden",
     border: "2px solid transparent",
-    "&:after": {
-        content: `"theme"`,
-        position: "absolute",
-        pointerEvents: "none",
-        transition: "0.2s",
-        opacity: 0,
-    },
-    "&:hover": {
-        "&:after": {
-            opacity: 0.6,
-        },
-    }
+}))
+
+export const SColorInputIcon = styled.div(props => ({
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    position: "absolute",
+    opacity: 0.5,
+    zIndex: 1,
+    width: "100%",
+    height: "100%",
+    transition: "0.2s",
+    pointerEvents: "none",
 }))
 
 export const SColorInput = styled.input((props) => ({
@@ -47,6 +73,7 @@ export const SColorInput = styled.input((props) => ({
     backgroundColor: "transparent",
     border: "none",
     outline: "none",
+    transition: "0.5s",
     "-webkit-appearance": "none",
     "&::-webkit-color-swatch-wrapper": {
         padding: 0,
@@ -54,13 +81,29 @@ export const SColorInput = styled.input((props) => ({
     "&::-webkit-color-swatch": {
         border: "none",
     },
+    "&:hover": {
+        filter: "brightness(150%)",
+    },
+}))
+
+export const SHeaderThemeBlock = styled.div((props) => ({
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    gap: 20,
 }))
 
 export const SHeaderBlock = styled.div((props) => ({
     display: "flex",
     alignItems: "center",
-    padding: "20px 20px 20px 0",
-    zIndex: 10,
+    padding: "20px 20px 0 0",
+    gap: 20,
+
+}))
+
+export const SHeaderNavWrapper = styled.div(() => ({
+    display: "flex",
+    alignItems: "center",
 }))
 
 export const SHeaderNavList = styled.div<TSHeaderNavListProps>(({isOpened, ...props}) => ({
