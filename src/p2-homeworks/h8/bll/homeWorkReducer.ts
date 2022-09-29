@@ -1,5 +1,5 @@
 import {UserType} from "../HW8";
-
+import {sendMessageAC, TSendMessageAC} from "../../h1/chatReducer";
 
 export const homeWorkReducer = (state: Array<UserType>, action: TActions): Array<UserType> => { // need to fix any
     switch (action.type) {
@@ -25,7 +25,7 @@ export const homeWorkReducer = (state: Array<UserType>, action: TActions): Array
     }
 }
 
-export type TActions = TNameSortAC | TCheckAC | TAgeSortAC
+export type TActions = TNameSortAC | TCheckAC | TAgeSortAC | TSendMessageAC
 
 type TNameSortAC = ReturnType<typeof nameSortAC>
 export const nameSortAC = (sort: 'up' | 'down' = 'up') => {
@@ -47,6 +47,6 @@ type TCheckAC = ReturnType<typeof checkAC>
 export const checkAC = (age: number = 18) => {
     return {
         type: "check",
-        payload:  age,
+        payload: age,
     } as const
 }

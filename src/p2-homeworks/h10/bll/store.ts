@@ -1,10 +1,12 @@
 import {combineReducers, legacy_createStore} from 'redux'
 import {loadingReducer} from './loadingReducer'
 import {themeReducer} from "../../h12/bll/themeReducer";
+import chatReducer from "../../h1/chatReducer";
 
 const reducers = combineReducers({
     loading: loadingReducer,
     theme: themeReducer,
+    chat: chatReducer
 
 })
 

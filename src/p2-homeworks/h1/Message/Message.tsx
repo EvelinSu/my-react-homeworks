@@ -8,7 +8,14 @@ import {
     SMessageTime,
     SMessageTitle
 } from "./styled";
-import {TMessageProps} from "./types";
+
+type TMessageProps = {
+    avatar: string,
+    name: string,
+    message: string,
+    time: string,
+    isMineMessage?: boolean,
+}
 
 const Message: FC<TMessageProps> = ({message, time, avatar, name, ...props}) => {
     return (

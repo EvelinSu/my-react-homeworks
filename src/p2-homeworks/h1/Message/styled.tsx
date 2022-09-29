@@ -14,19 +14,26 @@ export const SChat = styled.div(({theme, ...props}) => ({
     display: "flex",
     flexDirection: "column",
     backgroundColor: theme.colors.darkAlpha,
-    padding: 30,
-    gap: 20,
-    columnGap: 20,
-    rowGap: 20,
     width: 550,
     overflow: "auto",
     borderRadius: 30,
     boxSizing: "border-box",
 }))
 
+export const SChatMessages = styled.div((props) => ({
+    display: "flex",
+    flexDirection: "column",
+    height: 350,
+    overflow: "auto",
+    gap: 10,
+    padding: 20,
+}))
+
 export const SMessage = styled.div<TSMessageProps>(props => ({
     display: "flex",
     alignItems: "flex-end",
+    wordBreak: "break-word",
+    whiteSpace: "pre-line",
     gap: 10,
     columnGap: 10,
     rowGap: 10,
@@ -49,10 +56,10 @@ export const SMessageContainer = styled.div<TSMessageContainerProps>(({theme, ..
     display: "flex",
     flexDirection: "column",
     position: "relative",
-    padding: " 5px 10px",
+    padding: "6px 12px",
     backgroundColor: theme.colors.primary,
     borderRadius: "10px 10px 10px 10px",
-    maxWidth: "50%",
+    maxWidth: "60%",
     transition: "1s",
     "&:after": {
         content: '""',
