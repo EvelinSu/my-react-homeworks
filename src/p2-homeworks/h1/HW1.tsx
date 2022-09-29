@@ -3,7 +3,7 @@ import Message from "./Message/Message";
 import {SChat, SChatMessages} from "./Message/styled";
 import {useSelector} from "react-redux";
 import {AppStoreType} from "../h10/bll/store";
-import {TMessage} from "./chatReducer";
+import {TMessage} from "./bll/chatReducer";
 import ChatPanel from "./ChatPanel/ChatPanel";
 
 const HW1 = () => {

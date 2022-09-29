@@ -1,4 +1,5 @@
-import {TActions} from "../h8/bll/homeWorkReducer";
+import {TActions} from "../../h8/bll/homeWorkReducer";
+import {v1} from "uuid";
 
 export type TMessage = {
     id: string,
@@ -44,7 +45,7 @@ export const chatReducer = (state: TMessagePage = initialState, action: TActions
     switch (action.type) {
         case "SEND-MESSAGE":
             let newMessage: TMessage = {
-                id: '2',
+                id: v1(),
                 avatar: 'https://i.imgur.com/H1ZlGk9.png',
                 name: 'Простой студентик',
                 message: action.text,

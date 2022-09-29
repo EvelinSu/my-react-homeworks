@@ -2,11 +2,9 @@ import React, {ChangeEvent, useState} from 'react';
 import {SChatPanel, SChatTextarea} from "./styled";
 import SuperButton from "../../h4/common/c2-SuperButton/SuperButton";
 import {useDispatch} from "react-redux";
-import {sendMessageAC} from "../chatReducer";
+import {sendMessageAC} from "../bll/chatReducer";
 
-type  TChatPanel = {}
-
-const ChatPanel: React.FC<TChatPanel> = (props) => {
+const ChatPanel = () => {
 
     const [message, setMessage] = useState('')
 

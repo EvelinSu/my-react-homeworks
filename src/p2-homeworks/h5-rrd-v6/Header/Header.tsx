@@ -59,8 +59,9 @@ function Header() {
                 Or choose one of the sets:
                 </span>
                 <SColorBlocksWrapper>
-                    {presets.map(el => (
+                    {presets.map((el, i) => (
                         <SColorBlock
+                            key={i}
                             isActive={el.primary === primaryColor && el.secondary === secondaryColor}
                             primary={el.primary}
                             secondary={el.secondary}

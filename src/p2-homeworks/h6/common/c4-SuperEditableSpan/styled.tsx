@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SSuperEditableSpanWrapper = styled.div((props) => ({
+export const SSuperEditableSpanWrapper = styled.div(() => ({
     display: "flex",
     maxWidth: 180,
     width: 200,
@@ -11,7 +11,7 @@ type TSSuperEditableSpan = {
 }
 export const SSuperEditableSpan = styled.span<TSSuperEditableSpan>(({theme, ...props}) => ({
     padding: "7px 10px",
-    borderRadius: 10,
+    borderRadius: 20,
     fontSize: 14,
     width: "100%",
     maxWidth: props.maxWidth || "100%",

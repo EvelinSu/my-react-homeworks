@@ -1,5 +1,5 @@
 import {UserType} from "../HW8";
-import {sendMessageAC, TSendMessageAC} from "../../h1/chatReducer";
+import {TSendMessageAC} from "../../h1/bll/chatReducer";
 
 export const homeWorkReducer = (state: Array<UserType>, action: TActions): Array<UserType> => { // need to fix any
     switch (action.type) {
