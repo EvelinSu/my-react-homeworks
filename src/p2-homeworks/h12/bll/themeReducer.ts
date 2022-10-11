@@ -6,7 +6,8 @@ const theme = {
         darkAlpha: 'rgba(0,0,0,0.21)',
         secondary: '#5577a2',
 
-        danger: '#e96b6b',
+        success: "#408dcc",
+        danger: '#c74a4a',
         disabled: {
             opacity: 0.7,
             pointerEvents: "none",
