@@ -55,8 +55,11 @@ function AlternativeSuperSelect(props: TAlternativeSuperSelect) {
     }
 
     const arrowPreventDefault = () => {
-        window.addEventListener("keydown", (event) => event.preventDefault()); //для запрета глобал скролла
-        // стрелками
+        window.addEventListener("keydown", (event) => {
+            (event.key === "ArrowUp" || event.key === "ArrowDown") && event.preventDefault()
+            //для запрета глобал скролла стрелками
+        });
+
     };
 
     return (
@@ -64,8 +67,7 @@ function AlternativeSuperSelect(props: TAlternativeSuperSelect) {
             onFocus={arrowPreventDefault}
             onKeyUp={onKeyHandler}
             tabIndex={0}
-            onBlur={() =>
-                setOpened(false)}
+            onBlur={() => setOpened(false)}
         >
             <SSuperSelectInputWrapper
                 onClick={() => setOpened(!opened)}
