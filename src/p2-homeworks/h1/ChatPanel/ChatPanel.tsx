@@ -1,10 +1,13 @@
-import React, {ChangeEvent, useState} from 'react';
-import {SChatPanel, SChatTextarea} from "./styled";
-import SuperButton from "../../h4/common/c2-SuperButton/SuperButton";
+import React, {ChangeEvent, FC, useState} from 'react';
+import {SChatButton, SChatPanel, SChatTextarea} from "./styled";
 import {useDispatch} from "react-redux";
 import {sendMessageAC} from "../bll/chatReducer";
 
-const ChatPanel = () => {
+type TChatPanelProps = {
+    scrollToBottom: () => void
+}
+
+const ChatPanel: FC<TChatPanelProps> = (props) => {
 
     const [message, setMessage] = useState('')
 
@@ -26,6 +29,7 @@ const ChatPanel = () => {
         if (message.trim() !== '') {
             dispatch(sendMessageAC(message.trim()))
             setMessage('')
+            props.scrollToBottom()
         }
     }
 
@@ -34,13 +38,16 @@ const ChatPanel = () => {
             <SChatTextarea
                 onKeyDown={onKeyPress}
                 value={message}
+                onFocus={() => setTimeout(() => props.scrollToBottom(), 200)}
                 onChange={onChangeHandler}
                 placeholder={"Write your message..."}
             ></SChatTextarea>
-            <SuperButton
+            <SChatButton
                 disabled={message.trim() === ''}
                 onClick={onClickHandler}
-            >Send</SuperButton>
+            >
+                Send
+            </SChatButton>
         </SChatPanel>
     );
 };

@@ -13,8 +13,10 @@ export const STitle = styled.div(props => ({
 export const SChat = styled.div(({theme, ...props}) => ({
     display: "flex",
     flexDirection: "column",
+    justifyContent: "space-between",
     backgroundColor: theme.colors.darkAlpha,
     width: 550,
+    height: 450,
     overflow: "auto",
     borderRadius: 30,
     boxSizing: "border-box",
@@ -23,7 +25,6 @@ export const SChat = styled.div(({theme, ...props}) => ({
 export const SChatMessages = styled.div((props) => ({
     display: "flex",
     flexDirection: "column",
-    height: 350,
     overflow: "auto",
     gap: 10,
     padding: 20,

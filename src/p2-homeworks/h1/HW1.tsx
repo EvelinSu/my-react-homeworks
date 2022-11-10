@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {MutableRefObject, useRef} from 'react'
 import Message from "./Message/Message";
 import {SChat, SChatMessages} from "./Message/styled";
 import {useSelector} from "react-redux";
@@ -9,6 +9,19 @@ import ChatPanel from "./ChatPanel/ChatPanel";
 const HW1 = () => {
 
     const messages = useSelector<AppStoreType, Array<TMessage>>(state => state.chat.messages)
+    const scrollToBottomRef = useRef(null)
+
+    //жесть
+    const scrollToBottom = () => {
+        setTimeout(() => {
+            // @ts-ignore
+            scrollToBottomRef.current?.scrollTo({
+                top: document.body.scrollHeight,
+                left: 0,
+                behavior: "smooth"
+            })
+        }, 0)
+    }
 
     return (
         <div>
@@ -16,7 +29,7 @@ const HW1 = () => {
                 homeworks 1
             </h1>
             <SChat>
-                <SChatMessages>
+                <SChatMessages ref={scrollToBottomRef}>
                     {messages.map(({id, avatar, name, message, time, isMineMessage}) => (
                         <Message
                             key={id}
@@ -28,7 +41,7 @@ const HW1 = () => {
                         />
                     ))}
                 </SChatMessages>
-                <ChatPanel />
+                <ChatPanel scrollToBottom={scrollToBottom} />
             </SChat>
         </div>
     )
