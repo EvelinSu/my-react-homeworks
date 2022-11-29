@@ -1,4 +1,4 @@
-import React, {MutableRefObject, useRef} from 'react'
+import React, {useRef} from 'react'
 import Message from "./Message/Message";
 import {SChat, SChatMessages} from "./Message/styled";
 import {useSelector} from "react-redux";
