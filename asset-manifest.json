@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/my-react-homeworks/static/css/main.e70f89b1.css",
-    "main.js": "/my-react-homeworks/static/js/main.513a732a.js",
-    "static/media/loading.gif": "/my-react-homeworks/static/media/loading.f927cf935aad82679dce.gif",
-    "index.html": "/my-react-homeworks/index.html",
-    "main.e70f89b1.css.map": "/my-react-homeworks/static/css/main.e70f89b1.css.map",
-    "main.513a732a.js.map": "/my-react-homeworks/static/js/main.513a732a.js.map"
+    "main.css": "/my-react-training/static/css/main.66449c3a.css",
+    "main.js": "/my-react-training/static/js/main.32249054.js",
+    "static/media/loading.gif": "/my-react-training/static/media/loading.f927cf935aad82679dce.gif",
+    "index.html": "/my-react-training/index.html",
+    "main.66449c3a.css.map": "/my-react-training/static/css/main.66449c3a.css.map",
+    "main.32249054.js.map": "/my-react-training/static/js/main.32249054.js.map"
   },
   "entrypoints": [
-    "static/css/main.e70f89b1.css",
-    "static/js/main.513a732a.js"
+    "static/css/main.66449c3a.css",
+    "static/js/main.32249054.js"
   ]
 }
